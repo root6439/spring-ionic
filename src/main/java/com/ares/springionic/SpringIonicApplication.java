@@ -10,6 +10,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import com.ares.springionic.repositories.CategoriaRepository;
 import com.ares.springionic.repositories.ProdutoRepository;
 import com.ares.springionic.resources.domain.Categoria;
+import com.ares.springionic.resources.domain.Cidade;
+import com.ares.springionic.resources.domain.Estado;
 import com.ares.springionic.resources.domain.Produto;
 
 @SpringBootApplication
@@ -41,6 +43,16 @@ public class SpringIonicApplication implements CommandLineRunner{
 		p1.getCategorias().add(cat1);
 		p2.getCategorias().addAll(Arrays.asList(cat1, cat2));
 		p3.getCategorias().add(cat1);
+		
+		Estado est1 = new Estado(null, "Minas Gerais");
+		Estado est2 = new Estado(null, "São Paulo");
+		
+		Cidade c1 = new Cidade(null, "Uberlândia", est1);
+		Cidade c2 = new Cidade(null, "São Paulo", est2);
+		Cidade c3 = new Cidade(null, "Campinas", est2);
+		
+		est1.getCidades().add(c1);
+		est2.getCidades().addAll(Arrays.asList(c2, c3));
 		
 		categoriaRepository.saveAll(Arrays.asList(cat1, cat2));
 		produtoRepository.saveAll(Arrays.asList(p1, p2, p3));
