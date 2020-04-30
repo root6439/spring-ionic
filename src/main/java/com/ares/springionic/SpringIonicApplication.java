@@ -8,6 +8,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.ares.springionic.repositories.CategoriaRepository;
+import com.ares.springionic.repositories.CidadeRepository;
+import com.ares.springionic.repositories.EstadoRepository;
 import com.ares.springionic.repositories.ProdutoRepository;
 import com.ares.springionic.resources.domain.Categoria;
 import com.ares.springionic.resources.domain.Cidade;
@@ -22,6 +24,12 @@ public class SpringIonicApplication implements CommandLineRunner{
 	
 	@Autowired
 	private ProdutoRepository produtoRepository;
+	
+	@Autowired
+	private EstadoRepository estadoRepository;
+	
+	@Autowired
+	private CidadeRepository cidadeRepository;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(SpringIonicApplication.class, args);
@@ -44,6 +52,9 @@ public class SpringIonicApplication implements CommandLineRunner{
 		p2.getCategorias().addAll(Arrays.asList(cat1, cat2));
 		p3.getCategorias().add(cat1);
 		
+		categoriaRepository.saveAll(Arrays.asList(cat1, cat2));
+		produtoRepository.saveAll(Arrays.asList(p1, p2, p3));
+		
 		Estado est1 = new Estado(null, "Minas Gerais");
 		Estado est2 = new Estado(null, "São Paulo");
 		
@@ -54,8 +65,8 @@ public class SpringIonicApplication implements CommandLineRunner{
 		est1.getCidades().add(c1);
 		est2.getCidades().addAll(Arrays.asList(c2, c3));
 		
-		categoriaRepository.saveAll(Arrays.asList(cat1, cat2));
-		produtoRepository.saveAll(Arrays.asList(p1, p2, p3));
+		estadoRepository.saveAll(Arrays.asList(est1, est2));
+		cidadeRepository.saveAll(Arrays.asList(c1, c2, c3));
 		
 	}
 
