@@ -1,5 +1,6 @@
 package com.ares.springionic.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,10 @@ public class ClienteService {
 
 	@Autowired
 	private ClienteRepository repository;
+	
+	public List<Cliente> findAll() {
+		return repository.findAll();
+	}
 
 	public Cliente find(Integer id) {
 		Optional<Cliente> cliente = repository.findById(id);
