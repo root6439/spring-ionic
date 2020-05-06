@@ -5,8 +5,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.ares.springionic.domain.Pedido;
 import com.ares.springionic.repositories.PedidoRepository;
-import com.ares.springionic.resources.domain.Pedido;
 import com.ares.springionic.services.exceptions.ObjectNotFoundException;
 
 @Service

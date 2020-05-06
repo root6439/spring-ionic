@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ares.springionic.resources.domain.Cliente;
+import com.ares.springionic.domain.Cliente;
 import com.ares.springionic.services.ClienteService;
 
 @RestController

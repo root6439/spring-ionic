@@ -6,9 +6,9 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.ares.springionic.domain.Categoria;
+import com.ares.springionic.domain.Cliente;
 import com.ares.springionic.repositories.ClienteRepository;
-import com.ares.springionic.resources.domain.Categoria;
-import com.ares.springionic.resources.domain.Cliente;
 import com.ares.springionic.services.exceptions.ObjectNotFoundException;
 
 @Service

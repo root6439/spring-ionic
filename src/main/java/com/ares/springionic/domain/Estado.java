@@ -1,4 +1,4 @@
-package com.ares.springionic.resources.domain;
+package com.ares.springionic.domain;
 
 import java.io.Serializable;
 import java.util.ArrayList;

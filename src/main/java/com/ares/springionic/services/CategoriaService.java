@@ -7,8 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
+import com.ares.springionic.domain.Categoria;
 import com.ares.springionic.repositories.CategoriaRepository;
-import com.ares.springionic.resources.domain.Categoria;
 import com.ares.springionic.services.exceptions.DataIntegrityException;
 import com.ares.springionic.services.exceptions.ObjectNotFoundException;
 

@@ -1,4 +1,4 @@
-package com.ares.springionic.resources.domain;
+package com.ares.springionic.domain;
 
 import javax.persistence.Entity;
 

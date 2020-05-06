@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ares.springionic.resources.domain.Pedido;
+import com.ares.springionic.domain.Pedido;
 import com.ares.springionic.services.PedidoService;
 
 @RestController

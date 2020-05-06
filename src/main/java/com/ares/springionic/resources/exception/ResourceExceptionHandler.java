@@ -1,6 +1,7 @@
 package com.ares.springionic.resources.exception;
 
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -19,14 +20,14 @@ public class ResourceExceptionHandler {
 
 	@ExceptionHandler(ObjectNotFoundException.class)
 	public ResponseEntity<StandardError> objectNotFound(ObjectNotFoundException e, HttpServletRequest request) {
-		StandardError error = new StandardError(HttpStatus.NOT_FOUND.value(), e.getMessage(), sdf.format(new java.util.Date()));
+		StandardError error = new StandardError(HttpStatus.NOT_FOUND.value(), e.getMessage(), sdf.format(new Date()));
 		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(error);
 	}
 	
 	@ExceptionHandler(DataIntegrityException.class)
 	public ResponseEntity<StandardError> dataIntegrity(DataIntegrityException e, HttpServletRequest request) {
 		
-		StandardError err = new StandardError(HttpStatus.BAD_REQUEST.value(), e.getMessage(), sdf.format(new java.util.Date()));
+		StandardError err = new StandardError(HttpStatus.BAD_REQUEST.value(), e.getMessage(), sdf.format(new Date()));
 		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(err);
 		
 	}
