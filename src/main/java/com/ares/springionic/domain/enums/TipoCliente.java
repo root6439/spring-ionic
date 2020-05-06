@@ -1,4 +1,4 @@
-package com.ares.springionic.resources.domain.enums;
+package com.ares.springionic.domain.enums;
 
 public enum TipoCliente {
 

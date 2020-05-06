@@ -19,6 +19,8 @@ import com.ares.springionic.domain.PagamentoComBoleto;
 import com.ares.springionic.domain.PagamentoComCartao;
 import com.ares.springionic.domain.Pedido;
 import com.ares.springionic.domain.Produto;
+import com.ares.springionic.domain.enums.EstadoPagamento;
+import com.ares.springionic.domain.enums.TipoCliente;
 import com.ares.springionic.repositories.CategoriaRepository;
 import com.ares.springionic.repositories.CidadeRepository;
 import com.ares.springionic.repositories.ClienteRepository;
@@ -28,8 +30,6 @@ import com.ares.springionic.repositories.ItemPedidoRepository;
 import com.ares.springionic.repositories.PagamentoRepository;
 import com.ares.springionic.repositories.PedidoRepository;
 import com.ares.springionic.repositories.ProdutoRepository;
-import com.ares.springionic.resources.domain.enums.EstadoPagamento;
-import com.ares.springionic.resources.domain.enums.TipoCliente;
 
 @SpringBootApplication
 public class SpringIonicApplication implements CommandLineRunner {

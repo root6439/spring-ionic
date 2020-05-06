@@ -2,7 +2,7 @@ package com.ares.springionic.domain;
 
 import javax.persistence.Entity;
 
-import com.ares.springionic.resources.domain.enums.EstadoPagamento;
+import com.ares.springionic.domain.enums.EstadoPagamento;
 
 @Entity
 public class PagamentoComCartao extends Pagamento {

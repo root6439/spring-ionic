@@ -4,7 +4,7 @@ import java.util.Date;
 
 import javax.persistence.Entity;
 
-import com.ares.springionic.resources.domain.enums.EstadoPagamento;
+import com.ares.springionic.domain.enums.EstadoPagamento;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
