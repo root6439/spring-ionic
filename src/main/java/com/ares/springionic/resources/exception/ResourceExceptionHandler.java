@@ -1,7 +1,6 @@
 package com.ares.springionic.resources.exception;
 
 import java.text.SimpleDateFormat;
-import java.util.Date;
 
 import javax.servlet.http.HttpServletRequest;
 
