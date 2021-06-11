@@ -4,6 +4,8 @@ import java.net.URI;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
@@ -17,6 +19,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.ares.springionic.domain.Cliente;
 import com.ares.springionic.dto.ClienteDTO;
+import com.ares.springionic.dto.ClienteNewDTO;
 import com.ares.springionic.services.ClienteService;
 
 @RestController
@@ -40,10 +43,10 @@ public class ClienteResource {
 	}
 	
 	@RequestMapping(method = RequestMethod.POST)
-	public ResponseEntity<Cliente> insert(@RequestBody ClienteDTO cli) {
+	public ResponseEntity<Cliente> insert(@Valid @RequestBody ClienteNewDTO cli) {
 		Cliente c = service.fromDTO(cli);
 		service.insert(c);
-		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(cli.getId()).toUri();
+		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(c.getId()).toUri();
 		return ResponseEntity.created(uri).build();
 	}
 	
