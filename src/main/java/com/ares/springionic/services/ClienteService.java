@@ -20,6 +20,7 @@ import com.ares.springionic.domain.enums.TipoCliente;
 import com.ares.springionic.dto.ClienteDTO;
 import com.ares.springionic.dto.ClienteNewDTO;
 import com.ares.springionic.repositories.ClienteRepository;
+import com.ares.springionic.repositories.EnderecoRepository;
 import com.ares.springionic.services.exceptions.DataIntegrityException;
 import com.ares.springionic.services.exceptions.ObjectNotFoundException;
 
@@ -28,6 +29,9 @@ public class ClienteService {
 
 	@Autowired
 	private ClienteRepository repository;
+	
+	@Autowired
+	private EnderecoRepository endRepo;
 
 	public List<Cliente> findAll() {
 		return repository.findAll();
@@ -42,6 +46,7 @@ public class ClienteService {
 	@Transactional
 	public Cliente insert(Cliente cli) {
 		cli.setId(null);
+		endRepo.saveAll(cli.getEnderecos());
 		return repository.save(cli);
 	}
 
